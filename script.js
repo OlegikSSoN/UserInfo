@@ -1,31 +1,27 @@
-const userCardNum = prompt("Введіть номер картки");
-const userName = prompt("Ваше ім'я");
-const userCountry = prompt("Країна проживання USA, EN, UK");
-const userAge = Number(prompt("Ваш рік народження"));
+const card = prompt("Введіть номер картки");
+const name = prompt("Ваше ім'я");
+const country = prompt("Країна проживання USA, EN, UK");
+const age = Number(prompt("Ваш рік народження"));
 const currentYear = Number(new Date().getFullYear());
-const userBirthYear = Number(currentYear - userAge);
+const userBirthYear = Number(currentYear - age);
 
-if ((userCountry == "USA" || userCountry == "EN") && userAge >= 18) {
+if ((country == "USA" || country == "EN") && age >= 18) {
   alert(
-    `Good afternoon ${userName}, your year of birth is: ${userBirthYear}. Funds will be to your card: ${userCardNum}. By place of residence: ${userCountry}`
+    `Good afternoon ${name}, your year of birth is: ${userBirthYear}. Funds will be to your card: ${card}. By place of residence: ${country}`
   );
 } else {
-  if (userCountry == "UK" && userAge >= 18) {
+  if (country == "UK" && age >= 18) {
     alert(
-      `Доброго дня ${userName}, Ваш рік народження: ${userBirthYear}. Вам буде надіслано кошти на картку: ${userCardNum}. По місцю проживання: ${userCountry}`
+      `Доброго дня ${name}, Ваш рік народження: ${userBirthYear}. Вам буде надіслано кошти на картку: ${card}. По місцю проживання: ${country}`
     );
   } else {
-    if ((userCountry == "USA" || userCountry == "EN") && userAge < 18) {
+    if ((country == "USA" || country == "EN") && age < 18) {
       alert("Sorry, you're too young!");
     } else {
-      if (userCountry == "UK" && userAge < 18) {
+      if (country == "UK" && age < 18) {
         alert("Вибачте, Ви занадто молоді!");
       } else {
-        if (
-          userCountry != "USA" ||
-          userCountry != "EN" ||
-          userCountry != "UK"
-        ) {
+        if (country != "USA" || country != "EN" || country != "UK") {
           alert("Ви ввели неправильне значення країни проживання");
         }
       }
